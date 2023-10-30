@@ -1,7 +1,7 @@
 # InjectPRXBuildPS4
 This is a command line app is for loading sprx into process with post build events on Visual Studio
 
-Your YAML file should look like this
+Your YAML configuration file should look like this
 ```yaml
 target:
   target_name: PS4
@@ -38,7 +38,7 @@ Paste this code
 [Releases](https://github.com/TheRouletteBoi/InjectPRXBuildPS4/releases)
 
 ## Building 
-In Visual Studio navigate to Tools -> NuGet Package Manager -> Package Manager Console and install each NuGet Package individually
+In Visual Studio navigate to Tools -> NuGet Package Manager -> Package Manager Console then install each NuGet Package individually
 
 ```bash
 install-package YamlDotNet

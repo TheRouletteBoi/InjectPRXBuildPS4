@@ -14,9 +14,9 @@ using System.Net.Mail;
 string yamlFileName = "injectinfo.yaml";
 string yamlContent = File.ReadAllText(yamlFileName);
 
-var deserializer = new DeserializerBuilder().Build();
-var targetConfig = deserializer.Deserialize<YamlTargetConfiguration>(yamlContent);
-YamlTarget yamlTarget = targetConfig.target;
+var yamlDeserializer = new DeserializerBuilder().Build();
+var yamlTargetContent = yamlDeserializer.Deserialize<YamlTargetConfiguration>(yamlContent);
+YamlTarget yamlTarget = yamlTargetContent.target;
 
 
 if (!File.Exists(yamlTarget.source_path))
@@ -49,7 +49,7 @@ LoadPrx(yamlTarget.destination_path);
 
 
     // Save Console name and IP to yaml file
-    var serializer = new SerializerBuilder().Build();
+    var yamlSerializer = new SerializerBuilder().Build();
     var yamlTargetConfiguration = new YamlTargetConfiguration
     {
         target = new YamlTarget
@@ -61,7 +61,7 @@ LoadPrx(yamlTarget.destination_path);
         }
     };
 
-    string serializedYamlContent = serializer.Serialize(yamlTargetConfiguration);
+    string serializedYamlContent = yamlSerializer.Serialize(yamlTargetConfiguration);
     File.WriteAllText(yamlFileName, serializedYamlContent);
 }
 else
