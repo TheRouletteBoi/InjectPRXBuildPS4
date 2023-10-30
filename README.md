@@ -1,6 +1,16 @@
 # InjectPRXBuildPS4
 This is a command line app is for loading sprx into process with post build events on Visual Studio
 
+Your YAML file should look like this
+```yaml
+target:
+  target_name: PS4
+  console_ip: 192.168.2.252
+  source_path: 'C:\Users\USER\Desktop\livermorium\ORBIS_Debug\gta-5.sprx'
+  destination_path: '/data/Orbis Suite/'
+
+```
+
 
 ## Installation
 
@@ -19,6 +29,10 @@ Paste this code
     InjectPRXBuildPS4.exe
     ```
 2. TODO
+
+
+
+
 
 ## Download
 [Releases](https://github.com/TheRouletteBoi/InjectPRXBuildPS4/releases)

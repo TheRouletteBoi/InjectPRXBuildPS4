@@ -38,7 +38,7 @@ if (IsApiAvailable())
     Console.WriteLine($"Sprx destination {yamlTarget.destination_path}{Path.GetFileName(yamlTarget.source_path)}");
 
     // Load sprx from .yaml path
-    await LoadSomethingLocal(yamlTarget.source_path, yamlTarget.destination_path, yamlTarget.delete_sprx_after_injecting);
+    await LoadSomethingLocal(yamlTarget.source_path, yamlTarget.destination_path, true);
 
 
 #if UNUSED_CODE
@@ -355,6 +355,4 @@ public class YamlTarget
 
     [YamlMember(ScalarStyle = YamlDotNet.Core.ScalarStyle.SingleQuoted)]
     public string destination_path { get; set; }
-
-    public bool delete_sprx_after_injecting { get; set; }
 }
