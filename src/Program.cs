@@ -11,6 +11,8 @@ using System.Net.Mail;
 // TODO(Roulette): Add checks when attached and when loading sprx into console
 
 
+Console.WriteLine("Loading Sprx Into Console...");
+
 string yamlFileName = "injectinfo.yaml";
 string yamlContent = File.ReadAllText(yamlFileName);
 
@@ -20,7 +22,7 @@ YamlTarget yamlTarget = yamlTargetContent.target;
 
 
 if (!File.Exists(yamlTarget.source_path))
-    Console.WriteLine("SPRX file on computer does not exists. Check file 'injectinfo.yaml'");
+    Console.WriteLine($"SPRX file on computer does not exists. Check path {yamlTarget.source_path}");
 
 
 if (IsApiAvailable())
@@ -31,7 +33,6 @@ if (IsApiAvailable())
     string console_ip = currentTarget.IPAddress;
     string console_name = currentTarget.Name;
 
-    Console.WriteLine("Loading Sprx Into Console...");
     Console.WriteLine($"Target Name {console_name}");
     Console.WriteLine($"Console IP {console_ip}");
     Console.WriteLine($"Sprx directory {yamlTarget.source_path}");
@@ -66,7 +67,7 @@ LoadPrx(yamlTarget.destination_path);
 }
 else
 {
-    Console.WriteLine("Cannot connect to Orbis API");
+    Console.WriteLine("Error: Cannot connect to Orbis API");
 }
 
 
