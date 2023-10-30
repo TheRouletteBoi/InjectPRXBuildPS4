@@ -9,6 +9,7 @@ using System.Net.Mail;
 
 
 // TODO(Roulette): Add checks when attached and when loading sprx into console
+// TODO(Roulette): Add default values if no injectinfo.yaml is found
 
 
 Console.WriteLine("Loading Sprx Into Console...");
