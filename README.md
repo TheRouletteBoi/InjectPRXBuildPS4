@@ -64,3 +64,7 @@ install-package Microsoft.Extensions.Logging.Abstractions
 install-package System.Data.SQLite
 install-package System.Json
 ```
+
+
+## Contributors
+- OSM-Made for Orbis-Suite and code assistance 
